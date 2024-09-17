@@ -166,3 +166,21 @@ header {
 .listCart::-webkit-scrollbar {
   width: 0;
 }
+
+@media screen and (max-width: 992px) {
+  .listProduct {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .listProduct .item img {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .listProduct {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .listProduct .item img {
+    width: 80%;
+  }
+}
