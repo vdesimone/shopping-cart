@@ -2,13 +2,20 @@ const iconCart = document.querySelector('.icon-cart');
 const cartTab = document.querySelector('.cartTab');
 const header = document.querySelector('header');
 const listProductHTML = document.querySelector('.listProduct');
-let listCartHTML = document.querySelector('.listCart');
-let iconCartSpan = document.querySelector('.icon-cart span');
+const listCartHTML = document.querySelector('.listCart');
+const iconCartSpan = document.querySelector('.icon-cart span');
+const closeCart = document.querySelector('.close');
 
 let listProducts = [];
 let carts = [];
 
 iconCart.addEventListener('click', () => {
+  cartTab.classList.toggle('showCart');
+  header.classList.toggle('transform');
+  listProductHTML.classList.toggle('transform');
+})
+
+closeCart.addEventListener('click', () => {
   cartTab.classList.toggle('showCart');
   header.classList.toggle('transform');
   listProductHTML.classList.toggle('transform');
