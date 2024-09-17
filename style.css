@@ -21,6 +21,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
+  transition: 0.5s;
 }
 .icon-cart {
   position: relative;
@@ -50,6 +51,7 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  transition: 0.5s;
 }
 .listProduct .item {
   background-color: #eeeee6;
@@ -88,7 +90,10 @@ header {
 }
 .showCart {
   inset: 0 0 0 auto;
-  /* transform: translateX(-250px); */
+}
+.transform {
+  transform: translateX(-200px);
+  transition: 0.5s;
 }
 .cartTab h1 {
   padding: 20px;
