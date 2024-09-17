@@ -175,12 +175,26 @@ header {
     width: 85%;
   }
 }
-
 @media screen and (max-width: 768px) {
   .listProduct {
     grid-template-columns: repeat(2, 1fr);
   }
   .listProduct .item img {
     width: 80%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .listProduct .item img {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .listProduct .item img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 412px) {
+  .listProduct .item h2 {
+    min-height: 127.75px;
   }
 }
