@@ -151,6 +151,7 @@ header {
   color: #555;
   border-radius: 50%;
   cursor: pointer;
+  user-select: none;
 }
 .listCart .quantity span:nth-child(2) {
   background-color: transparent;

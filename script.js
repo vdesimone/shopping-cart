@@ -16,7 +16,7 @@ iconCart.addEventListener('click', () => {
 
 const addDataToHTML = () => {
   listProductHTML.innerHTML = '';
-  if(listProducts.length > 0) {
+  if (listProducts.length > 0) {
     listProducts.forEach(product => {
       let newProduct = document.createElement('div');
       newProduct.classList.add('item');
@@ -46,12 +46,12 @@ listProductHTML.addEventListener('click', (event) => {
 
 const addToCart = (product_id) => {
   let findProductInCart = carts.findIndex((value) => value.product_id == product_id);
-  if(carts.length <= 0) {
+  if (carts.length <= 0) {
     carts = [{
       product_id: product_id,
       quantity: 1
     }]
-  } else if(findProductInCart < 0) {
+  } else if (findProductInCart < 0) {
     carts.push({
       product_id: product_id,
       quantity: 1
@@ -75,11 +75,13 @@ const addCartToHTML = () => {
       totalQuantity = totalQuantity + cart.quantity;
       let newCart = document.createElement('div');
       newCart.classList.add('item');
+      newCart.dataset.id = cart.product_id;
+
       let findProduct = listProducts.findIndex((value) => value.id == cart.product_id);
       let info = listProducts[findProduct];
       newCart.innerHTML = `
         <div class="image">
-          <img src="${info.image}" alt="">
+          <img src="${info.image}" alt="${info.name}">
         </div>
         <div class="name">
           ${info.name}
@@ -93,10 +95,44 @@ const addCartToHTML = () => {
           <span class="plus">></span>
         </div>
       `;
-      listCartHTML.appendChild(newCart);
+    listCartHTML.appendChild(newCart);
     })
   }
   iconCartSpan.innerText = totalQuantity;
+}
+
+listCartHTML.addEventListener('click', (event) => {
+  let positionClick = event.target;
+  if (positionClick.classList.contains('minus') || positionClick.classList.contains('plus')) {
+    let product_id = positionClick.parentElement.parentElement.dataset.id;
+    let type = 'minus';
+    if (positionClick.classList.contains('plus')) {
+      type = "plus";
+    }
+    changeQuantity(product_id, type);
+  }
+})
+
+const changeQuantity = (product_id, type) => {
+  let findItemInCart = carts.findIndex((value) => value.product_id == product_id);
+  if (findItemInCart >= 0) {
+    switch (type) {
+      case 'plus':
+        carts[findItemInCart].quantity += 1;
+        break;
+
+      default:
+        let valueChange = carts[findItemInCart].quantity - 1;
+        if (valueChange > 0) {
+          carts[findItemInCart].quantity = valueChange;
+        } else {
+          carts.splice(findItemInCart, 1);
+        }
+        break;
+    }
+  }
+  addCartToMemory();
+  addCartToHTML();
 }
 
 const initApp = () => {
