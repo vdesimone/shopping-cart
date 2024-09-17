@@ -119,9 +119,16 @@ header {
 .cartTab .close {
   background-color: #eee;
 }
+.listCart .image {
+  display: flex;
+  width: 70px;
+  height: 64px;
+  align-items: center;
+}
 .listCart .item img {
   display: flex;
   align-items: center;
+  height: 95%;
   width: 100%;
   padding-left: 8px;
 }
@@ -131,6 +138,8 @@ header {
   gap: 10px;
   text-align: center;
   align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .listCart .quantity span {
   display: inline-flex;
