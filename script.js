@@ -26,7 +26,7 @@ const addDataToHTML = () => {
           <img src="${product.image}" alt="${product.name}">
         </div>
         <h2>${product.name}</h2>
-        <div class="price">${product.price}</div>
+        <div class="price">$${product.price}</div>
         <button class="addCart">
           Add To Cart
         </button>
@@ -64,8 +64,10 @@ const addToCart = (product_id) => {
 
 const addCartToHTML = () => {
   listCartHTML.innerHTML = '';
+  let totalQuantity = 0;
   if (carts.length > 0) {
     carts.forEach(cart => {
+      totalQuantity = totalQuantity + cart.quantity;
       let newCart = document.createElement('div');
       newCart.classList.add('item');
       let findProduct = listProducts.findIndex((value) => value.id == cart.product_id);
@@ -89,6 +91,7 @@ const addCartToHTML = () => {
       listCartHTML.appendChild(newCart);
     })
   }
+  iconCartSpan.innerText = totalQuantity;
 }
 
 const initApp = () => {
