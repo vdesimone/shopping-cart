@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "01 LEATHER CHAIR",
+    "price": 750,
+    "image": "images/chair1.png"
+  },
+  {
+    "id": 2,
+    "name": "02 SUEDE CHAIR",
+    "price": 350,
+    "image": "images/chair2.png"
+  },
+  {
+    "id": 3,
+    "name": "03 SUEDE CHAIR",
+    "price": 300,
+    "image": "images/chair3.png"
+  },
+  {
+    "id": 4,
+    "name": "04 SUEDE CHAIR",
+    "price": 300,
+    "image": "images/chair4.png"
+  },
+  {
+    "id": 5,
+    "name": "05 FAUX LEATHER CHAIR",
+    "price": 250,
+    "image": "images/chair5.png"
+  },
+  {
+    "id": 6,
+    "name": "06 LOUNGE CHAIR",
+    "price": 400,
+    "image": "images/chair6.png"
+  },
+  {
+    "id": 7,
+    "name": "07 LEATHER CHAIR",
+    "price": 700,
+    "image": "images/chair7.png"
+  },
+  {
+    "id": 8,
+    "name": "08 FABRIC CHAIR",
+    "price": 250,
+    "image": "images/chair8.png"
+  }
+]
