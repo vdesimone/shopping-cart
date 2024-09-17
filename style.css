@@ -45,7 +45,11 @@ header {
 
 .listProduct .item img {
   width: 90%;
+  height: 80%;
   filter: drop-shadow(0 50px 20px #0009);
+}
+.productImage {
+  height: 180px;
 }
 .listProduct {
   display: grid;
